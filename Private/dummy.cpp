@@ -1,0 +1,1 @@
+// Things are simpler if CMake builds an object file, even if its empty.
