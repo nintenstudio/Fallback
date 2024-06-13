@@ -114,27 +114,6 @@ namespace std {
 		return compare_exchange_strong(__expected, std::move(__desired), __o);
       }
 
-#if __cpp_lib_atomic_wait
-      void
-      wait(value_type __old,
-	   memory_order __o = memory_order_seq_cst) const noexcept
-      {
-	_M_impl.wait(std::move(__old), __o);
-      }
-
-      void
-      notify_one() noexcept
-      {
-	_M_impl.notify_one();
-      }
-
-      void
-      notify_all() noexcept
-      {
-	_M_impl.notify_all();
-      }
-#endif
-
     private:
       shared_ptr<_Tp> _M_ptr;
 	mutable shared_mutex _M_mtx;
